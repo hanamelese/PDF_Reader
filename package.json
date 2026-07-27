@@ -12,6 +12,8 @@
   "dependencies": {
     "bootstrap": "^5.3.8",
     "firebase": "^12.16.0",
+    "jszip": "^3.10.1",
+    "pdf-lib": "^1.17.1",
     "pdfjs-dist": "5.4.296",
     "react": "^19.2.7",
     "react-bootstrap": "^2.10.10",
