@@ -34,7 +34,7 @@ export default function PdfConverterSuite() {
         { id: 'pdf-to-jpg', label: 'PDF to JPG', accept: 'application/pdf' },
         { id: 'pdf-to-word', label: 'PDF to WORD', accept: 'application/pdf' },
         { id: 'pdf-to-txt', label: 'PDF to TXT', accept: 'application/pdf' },
-        { id: 'pdf-to-ppt', label: 'PDF to PPT (text)', accept: 'application/pdf' },
+        // { id: 'pdf-to-ppt', label: 'PDF to PPT (text)', accept: 'application/pdf' },
       ],
     },
   ];

@@ -1071,35 +1071,35 @@ export default function PDFViewer({ darkMode }) {
 
   // Robust Fullscreen
   const toggleFullScreen = () => {
-    const elem = viewerContainerRef.current;
-    if (!elem) return;
+  const elem = viewerContainerRef.current;
+  if (!elem) return;
 
-    const isFull =
-      document.fullscreenElement ||
-      document.webkitFullscreenElement ||
-      document.mozFullScreenElement;
+  const isFull = !!(
+    document.fullscreenElement ||
+    document.webkitFullscreenElement ||
+    document.mozFullScreenElement
+  );
 
-    if (!isFull) {
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen().catch((err) => {
-          alert(`Fullscreen error: ${err.message}`);
-        });
-      } else if (elem.webkitRequestFullscreen) {
-        elem.webkitRequestFullscreen();
-      } else if (elem.mozRequestFullScreen) {
-        elem.mozRequestFullScreen();
-      }
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      }
+  if (!isFull) {
+    const request =
+      elem.requestFullscreen ||
+      elem.webkitRequestFullscreen ||
+      elem.mozRequestFullScreen;
+
+    if (request) {
+      request.call(elem).then(() => {
+        // After entering fullscreen, re-fit the page
+        setTimeout(fitPageToScreen, 300);
+      });
     }
-  };
-
+  } else {
+    const exit =
+      document.exitFullscreen ||
+      document.webkitExitFullscreen ||
+      document.mozCancelFullScreen;
+    if (exit) exit.call(document);
+  }
+};
   const handleExtractAndRead = async () => {
     if (!pdfDocumentRef.current) return;
     try {
