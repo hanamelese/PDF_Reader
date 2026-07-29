@@ -71,10 +71,10 @@ export default function Merge({ darkMode }) {
           <div className="text-center mb-4">
             
             <h2 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: '700', color: '#d4e4fa' }}>
-              🗜️ File Compressor
+              🗜️ File Bundler
             </h2>
             <p style={{ color: '#c7c4d7' }}>
-              Select files to bundle and compress them into a single ZIP archive instantly.
+              Select files to bundle them into a single ZIP archive instantly.
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export default function Merge({ darkMode }) {
                 padding: '0.6rem 1.5rem'
               }}
             >
-              Choose Files to Compress
+              Choose Files 
             </Button>
           </div>
 
@@ -157,7 +157,7 @@ export default function Merge({ darkMode }) {
               {isCompressing && (
                 <div className="mb-3">
                   <div className="d-flex justify-content-between small mb-1" style={{ color: '#c7c4d7' }}>
-                    <span>Compressing...</span>
+                    <span>Proccessing...</span>
                     <span>{progress}%</span>
                   </div>
                   <ProgressBar now={progress} style={{ height: '6px', backgroundColor: '#1c2b3c' }} />

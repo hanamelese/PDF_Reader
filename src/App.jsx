@@ -9,6 +9,7 @@ import Toolbar from './components/Toolbar';
 import PDFViewer from './components/PDFViewer';
 import PdfMerger from './components/Merge';
 import PdfConverter from './components/Converter';
+import PDFCompressor from './components/Zip';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,8 +29,8 @@ export default function App() {
 
       {/* Main Content Area Switched by Active Tab */}
       <main>
-        {activeTab === 'compress' && <Compressor darkMode={darkMode} />}
-        
+        {activeTab === 'compress' && <PDFCompressor />}
+      
         {activeTab === 'edit' && (
           <>
             <Toolbar 
@@ -52,6 +53,12 @@ export default function App() {
         {activeTab === 'convert' && (
           <div className="text-light p-5 text-center">
             <PdfConverter />
+          </div>
+        )}
+
+         {activeTab === 'zip' && (
+          <div className="text-light p-5 text-center">
+            <Compressor darkMode={darkMode} />
           </div>
         )}
 

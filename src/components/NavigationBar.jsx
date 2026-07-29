@@ -58,20 +58,7 @@ export default function AppNavbar({ activeTab, setActiveTab, isLoggedIn, onAuthC
 
           {/* Right-side Auth Action */}
           <Nav className="align-items-center gap-2">
-            <Button 
-              onClick={onAuthClick}
-              size="sm"
-              style={{ 
-                backgroundColor: isLoggedIn ? 'transparent' : '#c0c1ff', 
-                color: isLoggedIn ? '#d4e4fa' : '#1000a9', 
-                border: isLoggedIn ? '1px solid rgba(212, 228, 250, 0.2)' : 'none', 
-                fontWeight: '600', 
-                borderRadius: '0.5rem',
-                padding: '0.5rem 1.2rem'
-              }}
-            >
-              {isLoggedIn ? '👤 Account / Logout' : '🔑 Sign Up / Login'}
-            </Button>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

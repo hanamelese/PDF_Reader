@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "file-saver": "^2.0.5",
     "firebase": "^12.16.0",
+    "jspdf": "^4.2.1",
     "jszip": "^3.10.1",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "5.4.296",
